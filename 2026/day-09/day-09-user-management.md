@@ -10,14 +10,16 @@ Practiced managing Linux users, groups, and directory permissions using hands-on
 ### 👤 `useradd -m` vs `useradd`
 * **`useradd -m <username>`**: Creates a new user **and** automatically builds their home directory (e.g., `/home/username`).
 * **`useradd <username>`**: Creates a new user **without** a home directory.
+* **`adduser <username>`**: Creates a new user and asks for Password.
 
 **Example:**
-```bash
+
 sudo useradd -m tokyo
+Sudo adduser tokyo
 
 🔍 Command to view users:
 
-Bash
+
 cat /etc/passwd
 👥 Group Commands
 🏷️ groupadd vs gpasswd -a
@@ -27,7 +29,7 @@ gpasswd -a <username> <groupname>: Adds an existing user into an existing group.
 
 Example:
 
-Bash
+
 # 1. Create a group
 sudo groupadd developers
 
@@ -35,21 +37,21 @@ sudo groupadd developers
 sudo gpasswd -a tokyo developers
 🔍 Commands to view groups:
 
-Bash
+
 # View all system groups
 cat /etc/group
 
 # View groups for a specific user
 groups tokyo
 📁 Shared Directories & Permissions
-Bash
+
 # Create shared directory with group ownership and 775 permissions
 sudo mkdir -p /opt/dev-project
 sudo chgrp developers /opt/dev-project
 sudo chmod 775 /opt/dev-project
 🔍 Command to view directory permissions:
 
-Bash
+
 ls -ld /opt/dev-project
 🧠 What I Learned
 🔐 Created users with home directories using useradd -m.
