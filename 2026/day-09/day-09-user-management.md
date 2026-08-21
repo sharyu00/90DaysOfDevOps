@@ -14,20 +14,18 @@ Practiced managing Linux users, groups, and directory permissions using hands-on
 
 **Example:**
 
-sudo useradd -m tokyo
+sudo useradd -m tokyo<br>
 Sudo adduser tokyo
 
-🔍 Command to view users:
+🔍 Command to view users:<br>
+cat /etc/passwd<br>
+👥 Group Commands<br>
+🏷️ groupadd vs gpasswd -a<br>
+groupadd <groupname>: Creates a new group on the system.<br>
 
+gpasswd -a <username> <groupname>: Adds an existing user into an existing group.<br>
 
-cat /etc/passwd
-👥 Group Commands
-🏷️ groupadd vs gpasswd -a
-groupadd <groupname>: Creates a new group on the system.
-
-gpasswd -a <username> <groupname>: Adds an existing user into an existing group.
-
-Example:
+Example:<br>
 
 
 # 1. Create a group
@@ -43,16 +41,17 @@ cat /etc/group
 
 # View groups for a specific user
 groups tokyo
-📁 Shared Directories & Permissions
+📁 Shared Directories & Permissions<br>
 
-# Create shared directory with group ownership and 775 permissions
-sudo mkdir -p /opt/dev-project
-sudo chgrp developers /opt/dev-project
-sudo chmod 775 /opt/dev-project
-🔍 Command to view directory permissions:
-
+# Create shared directory with group ownership and 775 permissions<br>
+sudo mkdir -p /opt/dev-project<br>
+sudo chgrp developers /opt/dev-project<br>
+sudo chmod 775 /opt/dev-project<br>
+🔍 Command to view directory permissions:<br>
 
 ls -ld /opt/dev-project
+
+
 🧠 What I Learned
 🔐 Created users with home directories using useradd -m.
 
