@@ -31,11 +31,6 @@ uname -a
 * CPU architecture
 * Operating system/kernel information
 
-### My Output
-
-```text
-PASTE YOUR ACTUAL OUTPUT HERE
-```
 
 ### Observation
 
