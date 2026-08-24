@@ -1,0 +1,49 @@
+# 🌐 Day 14 – Networking Fundamentals & Hands-on Checks
+
+## 🎯 Goal
+
+Learn basic networking concepts and practice common troubleshooting commands.
+
+## 🧠 Quick Concepts
+
+* **OSI Model:** 7 layers from Physical to Application.
+* **TCP/IP Model:** Link → Internet → Transport → Application.
+* **IP:** Internet layer — handles addressing and routing.
+* **TCP/UDP:** Transport layer — handles communication between systems.
+* **HTTP/HTTPS:** Application layer — used for web communication.
+* **DNS:** Application layer — converts domain names into IP addresses.
+
+Example:
+`curl https://example.com` → HTTP/HTTPS → TCP → IP
+
+## 🔧 Hands-on Checks
+
+| Check        | Command                      | Observation                           |
+| ------------ | ---------------------------- | ------------------------------------- |
+| Identity     | `hostname -I`                | Displays the system IP address.       |
+| Reachability | `ping google.com`            | Checks connectivity and latency.      |
+| Path         | `traceroute google.com`      | Shows the network path to the target. |
+| Ports        | `ss -tulpn`                  | Shows listening ports and services.   |
+| DNS          | `dig google.com`             | Displays the resolved IP address.     |
+| HTTP         | `curl -I https://google.com` | Shows the HTTP status code.           |
+| Connections  | `netstat -an \| head`        | Shows active connections.             |
+
+## 🔍 Port Probe
+
+```bash
+ss -tulpn
+nc -zv localhost <port>
+```
+
+If the port is not reachable, I would check the **service status and firewall rules**.
+
+## 💭 Reflection
+
+* **Fastest check:** `ping` for basic connectivity.
+* **DNS failure:** Check the **Application layer** and DNS configuration.
+* **HTTP 500:** Check the application/server.
+* **Follow-up checks:** Check `systemctl status` and firewall rules.
+
+## 📌 Key Takeaway
+
+I learned how to use basic networking commands to check **IP addresses, connectivity, DNS, ports, and HTTP services**.
