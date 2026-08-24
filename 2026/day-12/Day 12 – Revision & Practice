@@ -1,0 +1,47 @@
+# 🔄 Day 12 – Revision & Practice
+
+## 🎯 Goal
+
+Review and strengthen the Linux fundamentals learned from **Days 01–11**.
+
+## 📝 What I Reviewed
+
+*  Reviewed my learning goals and progress.
+*  Practiced process and service commands like `ps` and `systemctl status`.
+*  Practiced file operations using `ls`, `mkdir`, `cp`, and `echo`.
+*  Revised permissions with `chmod` and ownership with `chown`.
+*  Reviewed users and groups using `id`.
+*  Refreshed important Linux commands from previous days.
+
+## ✅ Mini Self-Check
+
+**1. Which 3 commands save me the most time?**
+
+* `ls -l` – quickly check files and permissions.
+* `ps` – check running processes.
+* `systemctl status` – check service status.
+
+**2. How do I check if a service is healthy?**
+
+```bash
+systemctl status <service>
+journalctl -u <service>
+ps aux
+```
+
+**3. How do I safely change ownership and permissions?**
+
+```bash
+sudo chown user:group file
+chmod 640 file
+```
+
+**4. What will I focus on next?**
+
+* 🚀 Improve Linux troubleshooting.
+* 🌐 Strengthen networking fundamentals.
+* ☁️ Connect Linux knowledge with AWS and DevOps.
+
+## 🧠 Key Takeaway
+
+This revision helped me **refresh important commands and strengthen my Linux fundamentals** before moving to new topics.
