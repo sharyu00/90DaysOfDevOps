@@ -1,0 +1,90 @@
+# 🌐 Day 15 – Networking Concepts: DNS, IP, Subnets & Ports
+
+## 🎯 Goal
+
+Understand the basic networking concepts used in DevOps: **DNS, IP addresses, CIDR, subnets, and ports**.
+
+## 1. 🔎 DNS
+
+When I enter `google.com`, the browser uses DNS to find the server's IP address.
+The DNS resolver checks for the required record and returns the IP.
+The browser then connects to that IP using the required protocol.
+
+* **A** → Maps a domain to an IPv4 address.
+* **AAAA** → Maps a domain to an IPv6 address.
+* **CNAME** → Creates an alias for another domain.
+* **MX** → Specifies mail servers for a domain.
+* **NS** → Specifies the authoritative DNS servers.
+
+```bash
+dig google.com
+```
+
+## 2. 🌐 IP Addressing
+
+An IPv4 address contains **4 octets**, each ranging from 0–255.
+
+Example: `192.168.1.10`
+
+* **Private IP:** Used inside private networks. Example: `192.168.1.10`
+* **Public IP:** Used for communication over the Internet.
+
+### Private IP Ranges
+
+* `10.0.0.0/8`
+* `172.16.0.0/12`
+* `192.168.0.0/16`
+
+```bash
+ip addr show
+```
+
+## 3. 📡 CIDR & Subnetting
+
+`/24` means **24 bits are used for the network portion**.
+
+| CIDR  | Subnet Mask       | Total IPs | Usable Hosts |
+| ----- | ----------------- | --------: | -----------: |
+| `/24` | `255.255.255.0`   |       256 |          254 |
+| `/16` | `255.255.0.0`     |    65,536 |       65,534 |
+| `/28` | `255.255.255.240` |        16 |           14 |
+
+Subnetting helps divide a large network into **smaller and manageable networks**.
+
+## 4. 🚪 Common Ports
+
+A port identifies a specific service running on a system.
+
+|  Port | Service |
+| ----: | ------- |
+|    22 | SSH     |
+|    80 | HTTP    |
+|   443 | HTTPS   |
+|    53 | DNS     |
+|  3306 | MySQL   |
+|  6379 | Redis   |
+| 27017 | MongoDB |
+
+```bash
+ss -tulpn
+```
+
+## 5. 🔗 Putting It Together
+
+### `curl http://myapp.com:8080`
+
+DNS resolves `myapp.com` to an IP address. The connection uses **HTTP** on port `8080` over the network.
+
+### App → `10.0.1.50:3306`
+
+First, I would check network connectivity, whether port `3306` is reachable, and whether MySQL is running on the database server.
+
+## 🧠 What I Learned
+
+* DNS converts domain names into IP addresses.
+* CIDR helps divide networks into smaller subnets.
+* Ports identify services and are important when troubleshooting connectivity.
+
+## 📌 Key Takeaway
+
+Understanding **DNS + IP + CIDR + Ports** gives me a strong foundation for troubleshooting network issues in Linux and cloud environments.
