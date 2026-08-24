@@ -1,0 +1,38 @@
+# 📁 Day 11 – File Ownership
+
+## 📂 Files & Directories Created
+
+* `devops-file.txt`
+* `team-notes.txt`
+* `project-config.yaml`
+* `app-logs/`
+* `heist-project/`
+* `bank-heist/`
+
+## 🔐 Ownership Changes
+
+* 👤 Changed file owner using `chown`
+* 👥 Changed group using `chgrp`
+* 🔄 Changed owner and group together using `chown owner:group`
+* 📁 Applied ownership changes recursively using `chown -R`
+
+## 💻 Commands Used
+
+```bash
+ls -l filename
+sudo chown user filename
+sudo chgrp group filename
+sudo chown user:group filename
+sudo chown -R user:group directory/
+```
+
+## 🧠 What I Learned
+
+* 👤 **Owner** is the user who owns a file.
+* 👥 **Group** controls access for a group of users.
+* 🔄 `chown` changes ownership, while `chgrp` changes the group.
+* 📁 `-R` applies ownership changes to all files and directories inside.
+
+### 🚀 Key Takeaway
+
+Understanding file ownership helps manage **security, access, and permissions** in Linux.
